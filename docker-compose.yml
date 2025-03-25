@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  user-service:
+    build: .
+    container_name: barbershop-user-service
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app/app
+      - ./sqlite_data:/app/sqlite_data
+    environment:
+      - SECRET_KEY=secret_key123
+      - LOG_LEVEL=INFO
+    restart: unless-stopped
