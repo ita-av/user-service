@@ -36,11 +36,11 @@ REST API microservice for user management in the barbershop appointment system.
    docker-compose up
    ```
 
-This will run the service in the foreground with logs printed to the console. To run in detached mode:
-
-```
-docker-compose up -d
-```
+   This will run the service in the foreground with logs printed to the console. To run in detached mode:
+   
+   ```
+   docker-compose up -d
+   ```
 
 3. The API will be available at http://localhost:8000
    - API documentation: http://localhost:8000/docs
