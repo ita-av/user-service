@@ -39,7 +39,7 @@ def login_for_access_token(
 
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(
-        subject=user.id, expires_delta=access_token_expires
+        subject=user.id, is_barber=user.is_barber, expires_delta=access_token_expires
     )
 
     logger.info(f"Successful login for user ID: {user.id}")
@@ -63,7 +63,7 @@ def login_with_email(login_data: LoginRequest, db: Session = Depends(get_db)):
 
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(
-        subject=user.id, expires_delta=access_token_expires
+        subject=user.id, is_barber=user.is_barber, expires_delta=access_token_expires
     )
 
     logger.info(f"Successful email login for user ID: {user.id}")
